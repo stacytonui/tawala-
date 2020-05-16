@@ -6,7 +6,7 @@
     <div class="container" style="margin-top: 80px">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/">Shop</a></li>
+                <li class="breadcrumb-item"><a href="/shop">Shop</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Cart</li>
             </ol>
         </nav>
@@ -94,7 +94,7 @@
                             <li class="list-group-item"><b>Total: </b>KES {{ \Cart::getTotal() }}</li>
                         </ul>
                     </div>
-                    <br><a href="/" class="btn btn-dark">Continue Shopping</a>
+                    <br><a href="/shop" class="btn btn-dark">Continue Shopping</a>
                     <a href="/checkout" class="btn btn-success">Proceed To Checkout</a>
                 </div>
             @endif

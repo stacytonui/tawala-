@@ -24,8 +24,8 @@ class CartController extends Controller
 
             )
         ));
-        return redirect()->back()->with('success', 'Item is Added to Cart!');
-       // return redirect()->route('cart.index')->with('success_msg', 'Item is Added to Cart!');
+       // return redirect()->back()->with('success', 'Item is Added to Cart!');
+       return redirect()->route('cart.index')->with('success_msg', 'Item is Added to Cart!');
     }
     public function remove(Request $request){
         \Cart::remove($request->id);
@@ -45,7 +45,7 @@ class CartController extends Controller
 
     public function clear(){
     \Cart::clear();
-    return redirect()->route('cart')->with('success_msg', 'Car is cleared!');
+    return redirect()->route('cart.index')->with('success_msg', 'Cart is cleared!');
     }
 
 
