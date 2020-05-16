@@ -8,6 +8,15 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
+    <link href="https://code.jquery.com/jquery-3.3.1.js">
+    <link href="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js">
+    <link href="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js">
+    <link href="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js">
+    <link href="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap4.min.js">
+
+
+
+
 
     <link rel="stylesheet" href="{{ asset('css/open-iconic-bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
@@ -22,6 +31,7 @@
 
     <link rel="stylesheet" href="{{ asset('css/bootstrap-datepicker.css') }}">
     <link rel="stylesheet" href="{{ asset('css/jquery.timepicker.css') }}">
+
 
 
     <link rel="stylesheet" href="{{ asset('css/flaticon.css') }}">
@@ -53,13 +63,21 @@
     <div id="app">
         <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
             <div class="container">
-                <a class="navbar-brand" href="/">Tawala Foods</a>
+                <a class="navbar-brand" href="/">
+                    <img src="{{ asset('images/rsz_logo.png')}}" alt="">
+                    Tawala Foods
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="oi oi-menu"></span> Menu
                 </button>
 
                 <div class="collapse navbar-collapse" id="ftco-nav">
                     <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="/about" class="nav-link">About Us</a></li>
+                        <li class="nav-item"><a href="/shop" class="nav-link">Shop</a></li>
+                        <li class="nav-item"><a href="/contact" class="nav-link">Contact Us</a></li>
+
                         @if (Route::has('login'))
 
                             @auth
@@ -91,15 +109,15 @@
                         @endif
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle"
-                                   href="#" role="button" data-toggle="dropdown"
+                                   href="{{ route('cart.index') }}" role="button" data-toggle="dropdown"
                                    aria-haspopup="true" aria-expanded="false"
-                                >
+                                >CART
                         <span class="badge badge-pill">
-                            <i class="icon-shopping_cart"></i> {{ \Cart::getTotalQuantity()}}
+                            <i class="icon-shopping_cart"></i>[{{ \Cart::getTotalQuantity()}}] 
                         </span>
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" style="width: 450px; padding: 0px; border-color: #9DA0A2">
+                                <div class="dropdown-menu dropdown-menu-right cart-menu" aria-labelledby="navbarDropdown" style="width: 450px; padding: 0px; border-color: #9DA0A2">
                                     <ul class="list-group" style="margin: 20px;">
                                         @include('includes.cart-drop')
                                     </ul>
@@ -114,7 +132,7 @@
         </nav>
 
 
-        <main class="py-4">
+        <main class="">
             @yield('content')
         </main>
     </div>
@@ -137,10 +155,10 @@
                 <div class="ftco-footer-widget mb-4 ml-md-5">
                     <h2 class="ftco-heading-2">Menu</h2>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="py-2 d-block">Shop</a></li>
-                        <li><a href="#" class="py-2 d-block">About</a></li>
-                        <li><a href="#" class="py-2 d-block">Journal</a></li>
-                        <li><a href="#" class="py-2 d-block">Contact Us</a></li>
+                        <li><a href="/shop" class="py-2 d-block">Shop</a></li>
+                        <li><a href="/about" class="py-2 d-block">About</a></li>
+
+                        <li><a href="/contact" class="py-2 d-block">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
@@ -149,8 +167,7 @@
                     <h2 class="ftco-heading-2">Help</h2>
                     <div class="d-flex">
                         <ul class="list-unstyled mr-l-5 pr-l-3 mr-4">
-                            <li><a href="#" class="py-2 d-block">Shipping Information</a></li>
-                            <li><a href="#" class="py-2 d-block">Returns &amp; Exchange</a></li>
+
                             <li><a href="#" class="py-2 d-block">Terms &amp; Conditions</a></li>
                             <li><a href="#" class="py-2 d-block">Privacy Policy</a></li>
                         </ul>
@@ -190,12 +207,12 @@
 <!-- loader -->
 <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
-
+@include('sweetalert::alert')
 <script src="{{ asset('js/jquery.min.js') }}"></script>
 <script src="{{ asset('js/jquery-migrate-3.0.1.min.js') }}"></script>
 <script src="{{ asset('js/popper.min.js') }}"></script>
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('js/jquery.easing.1.3.js') }}j"></script>
+<script src="{{ asset('js/jquery.easing.1.3.js') }}"></script>
 <script src="{{ asset('js/jquery.waypoints.min.js') }}"></script>
 <script src="{{ asset('js/jquery.stellar.min.js') }}"></script>
 <script src="{{ asset('js/owl.carousel.min.js') }}"></script>

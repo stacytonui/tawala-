@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class CartController extends Controller
 {
@@ -22,7 +24,8 @@ class CartController extends Controller
 
             )
         ));
-        return redirect()->route('cart.index')->with('success_msg', 'Item is Added to Cart!');
+        return redirect()->back()->with('success', 'Item is Added to Cart!');
+       // return redirect()->route('cart.index')->with('success_msg', 'Item is Added to Cart!');
     }
     public function remove(Request $request){
         \Cart::remove($request->id);

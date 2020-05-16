@@ -39,7 +39,9 @@ class CheckoutController extends Controller
         // request validation which I leave it to you
         $order = $this->orderRepository->storeOrderDetails($request->all());
 
-        dd($order);
+        //dd($order);
+        return redirect()->back()->with('success_msg', 'Your order has been received');
+
     }
 
 }

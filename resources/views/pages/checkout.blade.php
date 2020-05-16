@@ -3,6 +3,14 @@
 @section('content')
     <section class="ftco-section">
         <div class="container">
+        @if(session()->has('success_msg'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session()->get('success_msg') }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+        @endif
             <div class="row justify-content-center">
                 <div class="col-xl-7 ftco-animate">
                     <form action="/order" class="billing-form" method="post">
@@ -13,7 +21,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="firstname">Name</label>
-                                    <input type="text" class="form-control" name="name" value="{{ $user->name}}">
+                                    <input type="text" class="form-control" name="name" value="{{ $user->name}}" required>
                                     <input type="hidden" class="form-control" name="user_id" value="{{ $user->id}}">
                                 </div>
                             </div>
@@ -37,26 +45,26 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="streetaddress">Street Address</label>
-                                    <input type="text" class="form-control" name="address" value="{{ $user->street}}">
+                                    <input type="text" class="form-control" name="address" value="{{ $user->street}}" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="house">House No</label>
-                                    <input type="text" class="form-control" name="house" value="{{ $user->house}}">
+                                    <input type="text" class="form-control" name="house" value="{{ $user->house}}"required>
                                 </div>
                             </div>
                             <div class="w-100"></div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="phone">Phone</label>
-                                    <input type="text" class="form-control" name="phone" value="{{ $user->phone}}">
+                                    <input type="text" class="form-control" name="phone" value="{{ $user->phone}}"required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="emailaddress">Email Address</label>
-                                    <input type="text" class="form-control" name="email" value="{{ $user->email}}">
+                                    <input type="text" class="form-control" name="email" value="{{ $user->email}}"required>
                                 </div>
                             </div>
 
@@ -65,7 +73,7 @@
                         <div class="form-group">
                             <div class="col-md-12">
                                 <div class="checkbox">
-                                    <label><input type="checkbox" value="" class="mr-2"> I have read and accept the terms and conditions</label>
+                                    <label><input type="checkbox" value="" class="mr-2" required> I have read and accept the terms and conditions</label>
                                 </div>
                             </div>
                         </div>

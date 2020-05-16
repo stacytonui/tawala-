@@ -54,9 +54,9 @@
                         <div class="col-lg-5">
                             <p>
                                 <b><a href="/shop/{{ $item->attributes->slug }}">{{ $item->name }}</a></b><br>
-                                <b>Price: </b>${{ $item->price }}<br>
-                                <b>Sub Total: </b>${{ \Cart::get($item->id)->getPriceSum() }}<br>
-                                {{--                                <b>With Discount: </b>${{ \Cart::get($item->id)->getPriceSumWithConditions() }}--}}
+                                <b>Price: </b>KES {{ $item->price }}<br>
+                                <b>Sub Total: </b>KES {{ \Cart::get($item->id)->getPriceSum() }}<br>
+                                {{--                                <b>With Discount: </b>KES {{ \Cart::get($item->id)->getPriceSumWithConditions() }}--}}
                             </p>
                         </div>
                         <div class="col-lg-4">

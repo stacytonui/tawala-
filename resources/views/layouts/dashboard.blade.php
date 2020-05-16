@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Tawala Foods| Admin</title>
+    <title>Tawala Foods | Admin</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
@@ -52,7 +52,19 @@
                     <li class="nav-item">
                         <a class="nav-link " href="/orders">
                             <i class="material-icons">vertical_split</i>
-                            <span>ORDERS</span>
+                            <span>ALL ORDERS</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/pendingorders">
+                            <i class="material-icons">vertical_split</i>
+                            <span>PENDING ORDERS</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/completedorders">
+                            <i class="material-icons">vertical_split</i>
+                            <span>COMPLETED ORDERS</span>
                         </a>
                     </li>
 
@@ -71,15 +83,14 @@
                                     <i class="fas fa-search"></i>
                                 </div>
                             </div>
-                            <input class="navbar-search form-control" type="text" placeholder="Search for something..." aria-label="Search"> </div>
+                           </div>
                     </form>
                     <ul class="navbar-nav border-left flex-row ">
 
                         <li class="nav-item border-right dropdown notifications">
                             <a class="nav-link nav-link-icon text-center" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <div class="nav-link-icon__wrapper">
-                                    <i class="material-icons">&#xE7F4;</i>
-                                    <span class="badge badge-pill badge-danger">2</span>
+                                 
                                 </div>
                             </a>
                             <div class="dropdown-menu dropdown-menu-small" aria-labelledby="dropdownMenuLink">
@@ -119,12 +130,7 @@
                                 <span class="d-none d-md-inline-block"> {{ Auth::user()->name }}</span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-small">
-                                <a class="dropdown-item" href="user-profile-lite.html">
-                                    <i class="material-icons">&#xE7FD;</i> Profile</a>
-                                <a class="dropdown-item" href="components-blog-posts.html">
-                                    <i class="material-icons">vertical_split</i> Blog Posts</a>
-                                <a class="dropdown-item" href="add-new-post.html">
-                                    <i class="material-icons">note_add</i> Add New Post</a>
+                          
                                 <div class="dropdown-divider"></div>
 
                                 <a class="dropdown-item" href="{{ route('logout') }}"
@@ -171,8 +177,8 @@
                         <a class="nav-link" href="#">Blog</a>
                     </li>
                 </ul>
-                <span class="copyright ml-auto my-auto mr-2">Copyright © 2018
-              <a href="https://designrevision.com" rel="nofollow">DesignRevision</a>
+                <span class="copyright ml-auto my-auto mr-2">Copyright © 2020
+              <a href="/admin" rel="nofollow">Tawala Foods</a>
             </span>
             </footer>
         </main>
@@ -188,5 +194,6 @@
 <script src="scripts/extras.1.1.0.min.js"></script>
 <script src="scripts/shards-dashboards.1.1.0.min.js"></script>
 <script src="scripts/app/app-blog-overview.1.1.0.js"></script>
+@stack('scripts')
 </body>
 </html>
