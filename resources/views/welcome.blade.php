@@ -15,48 +15,57 @@
 
 
     </div>
-    
+
+    <section class="ftco-section">
         <div class="container">
-    <div class="row my-4">
-            <div class="col-md-4 my-1">
-                <div class="card bg-success text-white">
-                <div class="card-body">
-                    <blockquote class="blockquote">
-                    <h6 class="font-weight-bold">Order Time</h6>
-                    <footer class="card-blockquote" style="font-size: 1rem;">Hours: <cite title="Source title">8:00 am to 5:00 pm</cite></footer>
-                    <footer class="card-blockquote" style="font-size: 1rem;">Days: <cite title="Source title">Monday - Friday</cite></footer>
-                    </blockquote>
-                </div>
-                </div>
-            </div><!--col-md-4 my-1-->
-            <div class="col-md-4 my-1">
-                <div class="card bg-warning text-dark">
-                    <div class="card-body">
-                    <blockquote class="blockquote">
-                        <h6 class="font-weight-bold">Deliveries</h6>
-                        <footer class="card-blockquote" style="font-size: 1rem;">Orders before midday: <cite title="Source title">Same day</cite></footer>
-                        <footer class="card-blockquote" style="font-size: 1rem;">Orders after midday: <cite title="Source title">Next day</cite></footer>
-                    </blockquote>
+            <div class="row no-gutters ftco-services">
+                <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate">
+                    <div class="media block-6 services mb-md-0 mb-4">
+                        <div class="icon bg-color-1 active d-flex justify-content-center align-items-center mb-2">
+                            <span class="flaticon-shipped"></span>
+                        </div>
+                        <div class="media-body">
+                            <h3 class="heading">Same Day Delivery</h3>
+                            <span>Get your products when still fresh</span>
+                        </div>
                     </div>
                 </div>
-            </div><!--col-md-4 my-1-->
-            <div class="col-md-4 my-1">
-                <div class="card bg-danger text-white">
-                    <div class="card-body">
-                    <blockquote class="blockquote">
-                        <h6 class="font-weight-bold">Helpline</h6>
-                        <footer class="card-blockquote" style="font-size: 1rem;">Contact: <cite title="Source title">+254 709 123 456</cite></footer>
-                        <footer class="card-blockquote" style="font-size: 1rem;">Email: <cite title="Source title">tawalafoods@gmail.com</cite></footer>
-                    </blockquote>
+                <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate">
+                    <div class="media block-6 services mb-md-0 mb-4">
+                        <div class="icon bg-color-2 d-flex justify-content-center align-items-center mb-2">
+                            <span class="flaticon-diet"></span>
+                        </div>
+                        <div class="media-body">
+                            <h3 class="heading">Always Fresh</h3>
+                            <span>Product well package</span>
+                        </div>
                     </div>
                 </div>
-            </div><!--col-md-4-->
-            
+                <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate">
+                    <div class="media block-6 services mb-md-0 mb-4">
+                        <div class="icon bg-color-3 d-flex justify-content-center align-items-center mb-2">
+                            <span class="flaticon-award"></span>
+                        </div>
+                        <div class="media-body">
+                            <h3 class="heading">Superior Quality</h3>
+                            <span>Quality Products</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate">
+                    <div class="media block-6 services mb-md-0 mb-4">
+                        <div class="icon bg-color-4 d-flex justify-content-center align-items-center mb-2">
+                            <span class="flaticon-customer-service"></span>
+                        </div>
+                        <div class="media-body">
+                            <h3 class="heading">Support</h3>
+                            <span>24/7 Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        </div>
-        </div>
-       
-    
+    </section>
 
 
 
@@ -64,7 +73,16 @@
 
 
         <section class="ftco-section">
-       
+        <div class="container">
+            <div class="row justify-content-center mb-3 pb-3">
+                <div class="col-md-12 heading-section text-center ftco-animate">
+                    <span class="subheading">Featured Products</span>
+                    <h2 class="mb-4">Our Products</h2>
+
+
+                </div>
+            </div>
+        </div>
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-10 mb-5 text-center">
