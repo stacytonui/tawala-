@@ -1,0 +1,10 @@
+@media screen and (max-width: 600px) {
+    .cart-menu {
+      display: none;
+    }
+  }
+  
+  .active-purple-2 input.form-control[type=text]:focus:not([readonly]) {
+    border-bottom: 1px solid #ce93d8;
+    box-shadow: 0 1px 0 0 #ce93d8;
+  }

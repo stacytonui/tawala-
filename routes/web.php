@@ -27,13 +27,9 @@ Route::get('/about',function ()
 Route::get('/contact',function ()
 {
     return view('pages.contact');
-});Route::get('/shop',function ()
-{
-    $products = \App\Product::paginate(8);
-    $categories = \App\Category::all();
-    return view('pages.shop')->with('products', $products)
-        ->with('categories',$categories);
 });
+Route::get('/shop', 'ProductController@showProducts');
+Route::get('/product/{id}', 'ProductController@showProduct')->name('products.show');
 
 
 Route::get('/category/{category}','CategoryController@getCategory');
@@ -77,3 +73,5 @@ Route::get('/completedorders', 'OrderController@complete');
 Route::get('/orders/{order}', 'OrderController@show');
 
 Route::patch('/orders/{order}/completed', 'OrderController@completed');
+
+Route::post('/search', 'ProductController@search');

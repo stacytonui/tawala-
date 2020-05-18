@@ -7,9 +7,16 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Shop</a></li>
-                
+
             </ol>
         </nav>
+            <div style="float:right;">
+                <form action="/search" method="post">
+                    @csrf
+                    <input type="text" name="query"/>
+                    <input type="submit" class="btn btn-sm btn-primary" value="Search" />
+                </form>
+            </div>
             <div class="row justify-content-center">
                 <div class="col-md-10 mb-5 text-center">
                     <ul class="product-category">

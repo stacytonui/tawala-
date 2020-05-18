@@ -20,6 +20,8 @@
 
     <link rel="stylesheet" href="{{ asset('css/open-iconic-bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/stylee.css') }}">
+
 
     <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
@@ -107,22 +109,14 @@
                             @endauth
 
                         @endif
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle"
-                                   href="{{ route('cart.index') }}" role="button" data-toggle="dropdown"
-                                   aria-haspopup="true" aria-expanded="false"
+                            <li class="nav-item ">
+                                <a href="{{ route('cart.index') }}" class="nav-link"
                                 >CART
                         <span class="badge badge-pill">
                             <i class="icon-shopping_cart"></i>[{{ \Cart::getTotalQuantity()}}] 
                         </span>
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-right cart-menu" aria-labelledby="navbarDropdown" style="width: 450px; padding: 0px; border-color: #9DA0A2">
-                                    <ul class="list-group" style="margin: 20px;">
-                                        @include('includes.cart-drop')
-                                    </ul>
-
-                                </div>
                             </li>
 
 

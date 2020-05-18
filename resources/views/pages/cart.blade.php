@@ -73,7 +73,7 @@
                                 <form action="{{ route('cart.remove') }}" method="POST">
                                     {{ csrf_field() }}
                                     <input type="hidden" value="{{ $item->id }}" id="id" name="id">
-                                    <button class="btn btn-dark btn-sm" style="margin-right: 10px;"><i class="ion-ios-close"></i></button>
+                                    <button class="btn btn-c btn-sm" style="margin-right: 10px;"><i class="ion-ios-close"></i></button>
                                 </form>
                             </div>
                         </div>

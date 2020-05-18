@@ -5,7 +5,15 @@
 
 
     <section class="ftco-section">
+
         <div class="container">
+        <div style="float:right;">
+    <form action="/search" method="post">
+    @csrf
+    <input type="text" name="query"/>
+    <input type="submit" class="btn btn-sm btn-primary" value="Search" />
+    </form>
+    </div>
             <div class="row justify-content-center">
                 <div class="col-md-10 mb-5 text-center">
                     <ul class="product-category">
@@ -16,11 +24,12 @@
                     </ul>
                 </div>
             </div>
+
             <div class="row">
                 @foreach($products as $product)
                     <div class="col-md-6 col-lg-3 ftco-animate">
                         <div class="product">
-                            <a href="#" class="img-prod"><img class="img-fluid" src="{{ asset('images/'.$product->imagePath) }}">
+                            <a href="/product/{{ $product->id }}" class="img-prod"><img class="img-fluid" src="{{ asset('images/'.$product->imagePath) }}">
 
                                 <div class="overlay"></div>
                             </a>

@@ -5,11 +5,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
- @media screen and (min-width: 600px) {
-  .cart-menu {
-      width:450px ;
-  }
-}
+
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
