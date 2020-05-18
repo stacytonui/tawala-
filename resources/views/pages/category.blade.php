@@ -4,12 +4,7 @@
 
     <section class="ftco-section">
         <div class="container">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/">Shop</a></li>
 
-            </ol>
-        </nav>
             <div style="float:right;">
                 <form action="/search" method="post">
                     @csrf

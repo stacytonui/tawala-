@@ -65,25 +65,30 @@
                 </div>
             </div>
         </div>
-    </section>
 
 
 
 
 
 
-        <section class="ftco-section">
-        <div class="container">
+
+
+        <div class="container pt-4">
             <div class="row justify-content-center mb-3 pb-3">
                 <div class="col-md-12 heading-section text-center ftco-animate">
                     <span class="subheading">Featured Products</span>
-                    <h2 class="mb-4">Our Products</h2>
-
-
                 </div>
             </div>
         </div>
+
         <div class="container">
+            <div style="float:right;">
+                <form action="/search" method="post">
+                    @csrf
+                    <input type="text" name="query"/>
+                    <input type="submit" class="btn btn-sm btn-primary" value="Search" />
+                </form>
+            </div>
             <div class="row justify-content-center">
                 <div class="col-md-10 mb-5 text-center">
                     <ul class="product-category">
@@ -139,7 +144,7 @@
 
             </div>
             <div class="row text-center">
-                {{ $products->links() }}
+
             </div>
 
 
