@@ -75,3 +75,6 @@ Route::get('/orders/{order}', 'OrderController@show');
 Route::patch('/orders/{order}/completed', 'OrderController@completed');
 
 Route::post('/search', 'ProductController@search');
+
+
+

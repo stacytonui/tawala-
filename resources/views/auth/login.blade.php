@@ -64,6 +64,12 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="row justify-content-center pt-4">
+                        Don't have an account? &nbsp<a class="" href="{{ route('register') }}">
+                             Sign Up here
+                        </a>
+                        </div>
+
                     </form>
                 </div>
             </div>
