@@ -119,6 +119,13 @@
                                 </a>
 
                             </li>
+                        <li class="nav-item"><a href="tel:254 712345678" class="nav-link">CALL US
+                                <span class="badge badge-pill">
+                            <i class="fa fa-phone"></i>
+                        </span></a>
+
+                         </li>
+
 
 
                     </ul>
