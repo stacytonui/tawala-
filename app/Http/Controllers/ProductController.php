@@ -14,11 +14,19 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = \App\Product::paginate(8);
-        $categories = \App\Category::all();
+        $products = \App\Product::paginate(4);
+
+        $vegetables = \App\Category::paginate(4)->find(1)->products;
+        $dairy = \App\Category::paginate(4)->find(3)->products;
+        $fruits = \App\Category::paginate(4)->find(2)->products;
+        $legumes = \App\Category::paginate(4)->find(4)->products;
+
 
         return view('welcome')->with('products', $products)
-            ->with('categories',$categories);
+            ->with('vegetables',$vegetables)
+            ->with('fruits',$fruits)
+            ->with('legumes',$legumes)
+            ->with('dairy',$dairy);
     }
     public function showProducts()
     {

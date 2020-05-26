@@ -3,18 +3,44 @@
 @section('content')
     <!-- END nav -->
 
-    <div class="hero-wrap hero-bread " style="background-image: url('images/bg_1.jpg');">
-        <div class="container">
-            <div class="row no-gutters slider-text align-items-center justify-content-center">
-                <div class="col-md-9 ftco-animate text-center">
-
-                    <h1 class="mb-0 bread">Home</h1>
-                </div>
-            </div>
-        </div>
+    <section id="home-section" class="hero">
+		  <div class="home-slider owl-carousel">
 
 
-    </div>
+	      <div class="slider-item" style="background-image: url(images/landing.jpg);">
+	      	<div class="overlay"></div>
+
+
+	        <div class="container">
+
+
+	          <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
+
+	            <div class="col-sm-12 ftco-animate text-center">
+	              <h1 class="mb-2">FRESH . HEALTHY . RELIABLE</h1>
+	              <h2 class="subheading mb-4">Order Fresh vegetables and fruits direct from the farmers!</h2>
+                    <p class="mb-3"><a href="/shop" class="btn btn-primary">Shop Now</a></p>
+
+                    <form action="/search" method="post">
+                        @csrf
+                        <div class="row">
+                        <input type="text" class="form-control col-9 mx-2" style="border-radius: 30px;" name="query" placeholder="Search for products e.g eggs, sukuma wiki">
+                        <input type="submit" class="btn btn-sm btn-primary col-2" value="Search" />
+
+                        </div>
+                    </form>
+
+
+
+
+
+	            </div>
+
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+    </section>
 
     <section class="ftco-section">
         <div class="container">
@@ -67,12 +93,6 @@
         </div>
 
 
-
-
-
-
-
-
         <div class="container pt-4">
             <div class="row justify-content-center mb-3 pb-3">
                 <div class="col-md-12 heading-section text-center ftco-animate">
@@ -82,25 +102,14 @@
         </div>
 
         <div class="container">
-            <div style="float:right;">
-                <form action="/search" method="post">
-                    @csrf
-                    <input type="text" name="query"/>
-                    <input type="submit" class="btn btn-sm btn-primary" value="Search" />
-                </form>
-            </div>
+
             <div class="row justify-content-center">
                 <div class="col-md-10 mb-5 text-center">
-                    <ul class="product-category">
-                        <li><a href="/shop">All</a></li>
-                        @foreach($categories as $category)
-                            <li><a href="/category/{{$category->id}}">{{ $category->name }}</a></li>
-                        @endforeach
-                    </ul>
+                   <h4>Vegetables</h4>
                 </div>
             </div>
             <div class="row">
-                @foreach($products as $product)
+                @foreach($vegetables as $product)
                     <div class="col-md-6 col-lg-3 ftco-animate">
                         <div class="product">
                             <a href="#" class="img-prod"><img class="img-fluid" src="{{ asset('images/'.$product->imagePath) }}">
@@ -143,9 +152,207 @@
                 @endforeach
 
             </div>
-            <div class="row text-center">
+            <div class="row justify-content-center">
+                <div class="col-md-10 mb-5 text-center">
+                    <p><a href="/category/1" class="btn btn-primary text-center">See More</a></p>
+                </div>
+            </div>
+            <div class="form-group col-12">
+                <hr>
+            </div>
+
+
+
+        </div>
+
+        <div class="container">
+
+            <div class="row justify-content-center">
+                <div class="col-md-10 mb-5 text-center">
+                    <h4>Dairy Products</h4>
+                </div>
+            </div>
+            <div class="row">
+                @foreach($dairy as $product)
+                    <div class="col-md-6 col-lg-3 ftco-animate">
+                        <div class="product">
+                            <a href="#" class="img-prod"><img class="img-fluid" src="{{ asset('images/'.$product->imagePath) }}">
+
+                                <div class="overlay"></div>
+                            </a>
+                            <div class="text py-3 pb-4 px-3 text-center">
+                                <h3><a href="#">{{ $product->name }}</a></h3>
+                                <div class="d-flex">
+                                    <div class="pricing">
+                                        <p class="price"><span class="price-sale">KES {{ $product->price }}</span></p>
+                                    </div>
+                                </div>
+                                <div class="bottom-area d-flex px-3">
+                                    <div class="m-auto d-flex">
+
+                                        <form action="{{ route('cart.store') }}" method="POST">
+                                            {{ csrf_field() }}
+                                            <input type="hidden" value="{{ $product->id }}" id="id" name="id">
+                                            <input type="hidden" value="{{ $product->name }}" id="name" name="name">
+                                            <input type="hidden" value="{{ $product->price }}" id="price" name="price">
+                                            <input type="hidden" value="{{ $product->imagePath }}" id="img" name="img">
+
+                                            <input type="hidden" value="1" id="quantity" name="quantity">
+                                            <div class="card-footer" style="background-color: white;">
+                                                <div class="row">
+                                                    <button href="/add-to-cart/{{ $product->id }}" class="buy-now d-flex justify-content-center align-items-center mx-1">Add to Cart
+                                                        <span><i class="ion-ios-cart"></i></span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
 
             </div>
+            <div class="row justify-content-center">
+                <div class="col-md-10 mb-5 text-center">
+                    <p><a href="/category/3" class="btn btn-primary text-center">See More</a></p>
+                </div>
+            </div>
+            <div class="form-group col-12">
+                <hr>
+            </div>
+
+
+
+        </div>
+
+        <div class="container">
+
+            <div class="row justify-content-center">
+                <div class="col-md-10 mb-5 text-center">
+                    <h4>Fruits</h4>
+                </div>
+            </div>
+            <div class="row">
+                @foreach($fruits as $product)
+                    <div class="col-md-6 col-lg-3 ftco-animate">
+                        <div class="product">
+                            <a href="#" class="img-prod"><img class="img-fluid" src="{{ asset('images/'.$product->imagePath) }}">
+
+                                <div class="overlay"></div>
+                            </a>
+                            <div class="text py-3 pb-4 px-3 text-center">
+                                <h3><a href="#">{{ $product->name }}</a></h3>
+                                <div class="d-flex">
+                                    <div class="pricing">
+                                        <p class="price"><span class="price-sale">KES {{ $product->price }}</span></p>
+                                    </div>
+                                </div>
+                                <div class="bottom-area d-flex px-3">
+                                    <div class="m-auto d-flex">
+
+                                        <form action="{{ route('cart.store') }}" method="POST">
+                                            {{ csrf_field() }}
+                                            <input type="hidden" value="{{ $product->id }}" id="id" name="id">
+                                            <input type="hidden" value="{{ $product->name }}" id="name" name="name">
+                                            <input type="hidden" value="{{ $product->price }}" id="price" name="price">
+                                            <input type="hidden" value="{{ $product->imagePath }}" id="img" name="img">
+
+                                            <input type="hidden" value="1" id="quantity" name="quantity">
+                                            <div class="card-footer" style="background-color: white;">
+                                                <div class="row">
+                                                    <button href="/add-to-cart/{{ $product->id }}" class="buy-now d-flex justify-content-center align-items-center mx-1">Add to Cart
+                                                        <span><i class="ion-ios-cart"></i></span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-10 mb-5 text-center">
+                    <p><a href="/category/2" class="btn btn-primary text-center">See More</a></p>
+                </div>
+            </div>
+            <div class="form-group col-12">
+                <hr>
+            </div>
+
+
+
+        </div>
+
+        <div class="container">
+
+            <div class="row justify-content-center">
+                <div class="col-md-10 mb-5 text-center">
+                    <h4>Legumes</h4>
+                </div>
+            </div>
+            <div class="row">
+                @foreach($legumes as $product)
+                    <div class="col-md-6 col-lg-3 ftco-animate">
+                        <div class="product">
+                            <a href="#" class="img-prod"><img class="img-fluid" src="{{ asset('images/'.$product->imagePath) }}">
+
+                                <div class="overlay"></div>
+                            </a>
+                            <div class="text py-3 pb-4 px-3 text-center">
+                                <h3><a href="#">{{ $product->name }}</a></h3>
+                                <div class="d-flex">
+                                    <div class="pricing">
+                                        <p class="price"><span class="price-sale">KES {{ $product->price }}</span></p>
+                                    </div>
+                                </div>
+                                <div class="bottom-area d-flex px-3">
+                                    <div class="m-auto d-flex">
+
+                                        <form action="{{ route('cart.store') }}" method="POST">
+                                            {{ csrf_field() }}
+                                            <input type="hidden" value="{{ $product->id }}" id="id" name="id">
+                                            <input type="hidden" value="{{ $product->name }}" id="name" name="name">
+                                            <input type="hidden" value="{{ $product->price }}" id="price" name="price">
+                                            <input type="hidden" value="{{ $product->imagePath }}" id="img" name="img">
+
+                                            <input type="hidden" value="1" id="quantity" name="quantity">
+                                            <div class="card-footer" style="background-color: white;">
+                                                <div class="row">
+                                                    <button href="/add-to-cart/{{ $product->id }}" class="buy-now d-flex justify-content-center align-items-center mx-1">Add to Cart
+                                                        <span><i class="ion-ios-cart"></i></span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-10 mb-5 text-center">
+                    <p><a href="/category/4" class="btn btn-primary text-center">See More</a></p>
+                </div>
+            </div>
+            <div class="form-group col-12">
+                <hr>
+            </div>
+
 
 
         </div>

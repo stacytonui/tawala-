@@ -63,6 +63,9 @@
                 @endforeach
 
             </div>
+            <div class="col-12">
+                <hr/>
+            </div>
 
         </div>
     </section>
