@@ -39,6 +39,7 @@
     <link rel="stylesheet" href="{{ asset('css/flaticon.css') }}">
     <link rel="stylesheet" href="{{ asset('css/icomoon.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <script src="https://kit.fontawesome.com/10b4f94152.js" crossorigin="anonymous"></script>
 </head>
 <body class="goto-here">
 <div class="py-1 bg-primary">
@@ -113,7 +114,7 @@
                                 <a href="{{ route('cart.index') }}" class="nav-link"
                                 >CART
                         <span class="badge badge-pill">
-                            <i class="icon-shopping_cart"></i>[{{ \Cart::getTotalQuantity()}}] 
+                            <i class="icon-shopping_cart"></i>[{{ \Cart::getTotalQuantity()}}]
                         </span>
                                 </a>
 

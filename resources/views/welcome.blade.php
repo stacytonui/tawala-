@@ -23,16 +23,18 @@
 
                     <form action="/search" method="post">
                         @csrf
-                        <div class="row">
-                        <input type="text" class="form-control col-9 mx-2" style="border-radius: 30px;" name="query" placeholder="Search for products e.g eggs, sukuma wiki">
-                        <input type="submit" class="btn btn-sm btn-primary col-2" value="Search" />
+                        <div class="row ">
+                            <div class="input-group col-12 mx-2 input-group" style="border-radius: 30px;">
+                        <input type="text" class="form-control "  name="query" placeholder="Search for products e.g eggs, sukuma wiki">
+                            <span class="input-group-append">
+                <button class="btn btn-outline-success" type="submit">
+                    <i class="fa fa-search"></i>
+                </button>
+            </span>
 
                         </div>
+                        </div>
                     </form>
-
-
-
-
 
 	            </div>
 
