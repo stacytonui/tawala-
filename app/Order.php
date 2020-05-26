@@ -9,7 +9,7 @@ class Order extends Model
     protected $table = 'orders';
 
     protected $fillable = [
-        'order_number', 'user_id', 'status', 'grand_total', 'item_count',
+        'order_number', 'user_id', 'status', 'grand_total', 'item_count','payment_status', 'payment_method',
         'name', 'address', 'location', 'email', 'house', 'phone'
     ];
 
