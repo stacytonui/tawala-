@@ -75,6 +75,10 @@ Route::get('/orders/{order}', 'OrderController@show');
 Route::patch('/orders/{order}/completed', 'OrderController@completed');
 
 Route::post('/search', 'ProductController@search');
+Route::post('/farmer_registration', 'RegisterController@farmerStore');
+Route::post('/vendor_registration', 'RegisterController@vendorStore');
+Route::get('/register_farmer', 'RegisterController@farmer');
+Route::get('/register_vendor', 'RegisterController@vendr');
 
 
 
