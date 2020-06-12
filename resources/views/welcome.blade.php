@@ -51,11 +51,13 @@
             <div class="row no-gutters ftco-services">
 
 
-                <div class="col-sm-12 ftco-animate text-center">
+                <div class="col-sm-12 ftco-animate text-center jumbotron">
 
 
-                   <a href="/register_vendor" class="btn btn-primary">Register as a Vendor</a>
-                   <a href="/register_farmer" class="btn btn-primary">Register as a farmer</a>
+                   <a href="/register_vendor" class="btn btn-primary mb-2">Register as a Vendor</a>
+                   <a href="/register_farmer" class="btn btn-primary mb-2 ">Register as a farmer</a>
+
+
 
 
 
@@ -65,8 +67,7 @@
             </div>
         </div>
 
-    </section>
-        <section class="ftco-section">
+
 
 
         <div class="container">
