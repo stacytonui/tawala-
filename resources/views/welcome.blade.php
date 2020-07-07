@@ -20,7 +20,9 @@
 
                     <p><span style="font-size: 36pt">FRESH . <strong>HEALTHY</strong> . RELIABLE</span></p>
 	              <h2 class="subheading mb-4">Order Fresh vegetables and fruits direct from the farmers!</h2>
-                    <p class="mb-3"><a href="/shop" class="btn btn-primary">Shop Now</a></p>
+                    <p class="mb-3"><a href="/shop" class="btn btn-secondary">Shop</a>
+                    <a href="/shop" class="btn btn-secondary">Register as Vendor</a>
+                    <a href="/shop" class="btn btn-secondary">Register as Farmer</a></p>
 
                     <form action="/search" method="post">
                         @csrf
@@ -47,25 +49,7 @@
 
 
     <section class="ftco-section">
-        <div class="container">
-            <div class="row no-gutters ftco-services">
 
-
-                <div class="col-sm-12 ftco-animate text-center jumbotron">
-
-
-                   <a href="/register_vendor" class="btn btn-primary mb-2">Register as a Vendor</a>
-                   <a href="/register_farmer" class="btn btn-primary mb-2 ">Register as a farmer</a>
-
-
-
-
-
-                </div>
-
-
-            </div>
-        </div>
 
 
 
