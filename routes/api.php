@@ -17,5 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::post('v1/access/token', 'MpesaController@generateAccessToken');
+Route::post('v1/tawala/stk/push', 'MpesaController@customerMpesaSTKPush')->name('m');
 Route::get('get_cities', 'APIController@getCities');
 Route::get('get_locations', 'APIController@getLocations');
+Route::post('v1/tawala/validation', 'MpesaController@mpesaValidation');
+Route::post('v1/tawala/transaction/confirmation', 'MpesaController@mpesaConfirmation');
+Route::post('v1/tawala/register/url', 'MpesaController@mpesaRegisterUrls');

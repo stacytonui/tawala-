@@ -34,13 +34,28 @@ class CheckoutController extends Controller
 
     }
     public function placeOrder(Request $request)
+
     {
         // Before storing the order we should implement the
         // request validation which I leave it to you
-        $order = $this->orderRepository->storeOrderDetails($request->all());
 
-        //dd($order);
-        return redirect()->back()->with('success_msg', 'Your order has been received');
+
+        switch ($request->input('payment')) {
+            case 'onDelivery':
+            $order = $this->orderRepository->storeOrderDetails($request->all());
+
+                //dd($order);
+                return redirect()->back()->with('success_msg', 'Your order has been received');
+                // Save model
+                break;
+
+            case 'Mpesa':
+                return redirect()->route('mpesa');
+
+
+
+
+        }
 
     }
 

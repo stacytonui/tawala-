@@ -78,7 +78,7 @@
                             </div>
                         </div>
 
-                        <p><button  class="btn btn-primary py-3 px-4">Place an order</button></p>
+                        <p><button  class="btn btn-primary py-2 px-4 mx-2" name="payment" value="onDelivery" >Pay on Delivery</button><button  class="btn btn-primary py-2 px-4" name="payment" value="Mpesa">Pay via M-pesa</button></p>
                     </form><!-- END -->
                 </div>
                 <div class="col-xl-5">

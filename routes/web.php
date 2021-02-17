@@ -80,5 +80,7 @@ Route::post('/vendor_registration', 'RegisterController@vendorStore');
 Route::get('/register_farmer', 'RegisterController@farmer');
 Route::get('/register_vendor', 'RegisterController@vendr');
 
+Route::post('v1/access/token', 'MpesaController@generateAccessToken');
+
 
 
