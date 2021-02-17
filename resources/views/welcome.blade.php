@@ -47,7 +47,7 @@
     </section>
 
 
-    <!-- <section class="ftco-section">
+    <section class="ftco-section">
 
 
 
@@ -366,7 +366,7 @@
 
 
         </div>
-    </section> -->
+    </section>
 
 
 
