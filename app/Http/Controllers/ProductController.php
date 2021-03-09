@@ -16,10 +16,10 @@ class ProductController extends Controller
     {
         $products = \App\Product::paginate(4);
 
-        $vegetables = \App\Category::paginate(4)->find(1)->products;
-        $dairy = \App\Category::paginate(4)->find(3)->products;
-        $fruits = \App\Category::paginate(4)->find(2)->products;
-        $legumes = \App\Category::paginate(4)->find(4)->products;
+        $vegetables = \App\Category::paginate(4)->find(1)->products()->get();
+        $dairy = \App\Category::paginate(4)->find(3)->products()->get();
+        $fruits = \App\Category::paginate(4)->find(2)->products()->get();
+        $legumes = \App\Category::paginate(4)->find(4)->products()->get();
 
 
         return view('welcome')->with('products', $products)
