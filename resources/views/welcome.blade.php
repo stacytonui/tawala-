@@ -119,6 +119,12 @@
                 </div>
             </div>
             <div class="row">
+            @if(is_null($products))
+            <div class="col-md-6 col-lg-3 ftco-animate">
+            <h3><a href="#">No products</a></h3>
+            
+            </div>
+            @else
                 @foreach($vegetables as $product)
                     <div class="col-md-6 col-lg-3 ftco-animate">
                         <div class="product">
@@ -130,7 +136,7 @@
                                 <h3><a href="#">{{ $product->name }}</a></h3>
                                 <div class="d-flex">
                                     <div class="pricing">
-                                        <p class="price"><span class="price-sale">KES {{ $product->price }}</span></p>
+                                        <p class="price"><span class="price-sale">KSH {{ $product->price }}</span></p>
                                     </div>
                                 </div>
                                 <div class="bottom-area d-flex px-3">
@@ -160,6 +166,7 @@
                         </div>
                     </div>
                 @endforeach
+                @endif
 
             </div>
             <div class="row justify-content-center">
